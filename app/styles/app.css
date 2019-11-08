@@ -7,3 +7,10 @@
 .controls button {
   flex: 1;
 }
+
+.d-none {
+  display: none;
+}
+
+/* <img class="d-none" src="/images/meteor.png" {{did-insert this.addImage "meteor"}}>
+<img class="d-none" src="/images/player.png" {{did-insert this.addImage "player"}}> */

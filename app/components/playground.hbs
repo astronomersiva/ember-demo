@@ -1,6 +1,22 @@
-<canvas
-  width={{this.width}}
-  height={{this.height}}
->
+{{#if @siva}}
+  <canvas
+    style="background: url(/images/space.jpg);"
+    width={{this.width}}
+    height={{this.height}}
+    {{did-insert this.initialise}}
+    {{on "mousemove" this.repositionShip}}
+  >
 
-</canvas>
+  </canvas>
+{{else}}
+  <div
+    class="controls"
+    {{did-insert this.emitRockAdd}}
+  >
+    <button {{on "click" (fn this.emitMoveRock "UP")}}>UP</button>
+    <button {{on "click" (fn this.emitMoveRock "DOWN")}}>DOWN</button>
+  </div>
+{{/if}}
+
+<img class="d-none" src="/images/meteor.png" {{did-insert this.addImage "meteor"}}>
+<img class="d-none" src="/images/player.png" {{did-insert this.addImage "player"}}>
